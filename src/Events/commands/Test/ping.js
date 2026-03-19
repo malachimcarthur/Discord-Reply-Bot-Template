@@ -1,0 +1,16 @@
+const { SlashCommandBuilder } = require("discord.js");
+const { client } = require("../../../util/client");
+
+module.exports = {
+  data: new SlashCommandBuilder()
+    .setName("ping")
+    .setDescription("Replies with Pong!"),
+  async execute(interaction) {
+    try {
+      await interaction.deferReply();
+      await interaction.followUp(`Pong! ${client.ws.ping}ms`);
+    } catch (error) {
+      console.error(`Something went wrong in ping: ${error}`);
+    }
+  },
+};
