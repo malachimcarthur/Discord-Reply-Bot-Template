@@ -1,7 +1,6 @@
 import type { Message, OmitPartialGroupDMChannel } from "discord.js";
 
 const { client } = require("../util/client.js");
-const { JAX_ID } = require("../util/constants.js");
 const { getRandomIntInclusive } = require("../util/randomValues.js");
 const {
   generalPrompts,
@@ -11,11 +10,9 @@ const {
 } = require("../util/MessageComponents/Content/prompts/questionPrompts.js");
 const {
   specialPrompts,
-  triggers,
 } = require("../util/MessageComponents/Content/prompts/specialPrompts.js");
 const { Wordle } = require("../util/MessageComponents/Wordle.js");
 const { CreateFile } = require("../util/MessageComponents/CreateFile.js");
-const fs = require("node:fs");
 const {
   censorList,
 } = require("../util/MessageComponents/Content/prompts/censorList.js");
